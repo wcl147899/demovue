@@ -7,23 +7,37 @@
       background-color="#fff"
       text-color="#000000"
       router>
+      <div>
+                <el-submenu :index="index + ''" v-for="(itemList, index) in itemList" :key="itemList.id">
+                    <template slot="title">
+                        <i class="el-icon-location"></i>
+                        <span>{{ itemList.title }}</span>
+                    </template>
+                    <template v-for="item in itemList.children">
+                        <el-menu-item :index="item.index" :key="item.id" v-if="item">
+                            <span slot="title">{{ item.title }}</span>
+                        </el-menu-item>
+                    </template>
+                </el-submenu>
+            </div>
+      <!-- 5、在子组件使用接收过来的值
       <el-menu-item v-for="(item, index) in itemList" :key="index" :index="item.path">
-        <!-- 需要图标的在 item 对象中加上属性 icon -->
-        <!-- <i :class="item.icon"></i> -->
         <span slot="title">{{ item.title }}</span>
-      </el-menu-item>
+      </el-menu-item> -->
     </el-menu>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    itemList: {
-      type: Array,
-      default: () => []
-    }
-  },
+  //4、在子组件中定义props，并可规定传值类型
+   props: ['itemList'],
+  // props: {
+  //   itemList: {
+  //     type: Array,
+  //     default: () => []
+  //   }
+  // },
   data(){
     return {
 

@@ -32,20 +32,21 @@
     </div>   
 </div>
 </template>
-
 <script>
 export default {
 data() {
     return {
-     itemList: [    // 水平一级菜单栏的菜单
+     itemList: [ // 水平一级菜单栏的菜单
         { path: '/Home', title: '首页' },
-        { path: '/test1', title: '一级菜单1' },
+        { path: '/test1', title: '一级菜单1'},
       ],
     }
 },
  computed: {
     toIndex(){  // 根据路径绑定到对应的一级菜单，防止页面刷新重新跳回第一个
-      return '/' + this.$route.path.split('/')[1];
+      console.log("我在computedxia");
+      console.log(this.$route.path);//默认选中/Home
+      return '/' + this.$route.path.split('/')[1];//"/Home"-->['','Home']
     },
   },
 methods: {
@@ -53,7 +54,7 @@ methods: {
       this.$router.push({
         path: path
       });
-      console.log(path);
+      console.log(path);//  /test1
     },
     handleCommand(command){  // 用户名下拉菜单选择事件
       if(command == 'loginout'){
@@ -68,6 +69,7 @@ methods: {
 </script>
 <style scoped>
 .header {
+  /* 为什么要设置成相对定位 */
   position: relative;
   box-sizing: border-box;
   width: 100%;
@@ -88,31 +90,35 @@ methods: {
   float: right;
   padding-right: 50px;
 }
-.header-user-con {
+/* .header-user-con {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 70px;
-}
+} */
 .user-avator {
   margin-left: 20px;
+  float: left;
+  margin-top: 15px;
 }
 .user-avator img {
-  display: block;
+  display: block;    
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 .user-name {
   margin-left: 10px;
+  float: right;
+  margin-top: 26px;
 }
 .el-dropdown-link {
   cursor: pointer;
 }
-.el-dropdown-menu__item {
+/* .el-dropdown-menu__item {
   text-align: center;
-}
-/* --------------- 水平一级菜单栏的样式--------------------- */
+} */
+/* --------------- 水平一级菜单栏的样式---------------------   */
 .el-menu.el-menu--horizontal {
   border-bottom: none !important;
   float: left;

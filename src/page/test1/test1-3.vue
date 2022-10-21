@@ -100,12 +100,10 @@
 </template>
 
 <script>
-
 import request from '../../util/request'
 export default {
   name: 'Home',
   components: {
-
   },
   data(){
     return{
@@ -281,8 +279,6 @@ export default {
   }
 }
 </script>
-
-
 <style>
 .content-box{
   position: absolute;

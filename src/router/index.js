@@ -18,7 +18,7 @@ export default new Router({
         {
           path: '/test1',
           component: () => import('@/page/test1/index.vue'),
-          meta: { title: '一级菜单1' },
+          meta: { title: '二级菜单1' },
           redirect: '/test1/test1-1',  // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
           children:[
             {
