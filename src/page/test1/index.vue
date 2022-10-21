@@ -28,9 +28,9 @@ export default {
          {
             title: '菜单管理',
             children: [
-                        { index: 'test1-1', title: '菜单管理' },
-                        { index: 'test1-2', title: '内容管理' },
-                        { index: 'test1-3', title: '角色管理' }
+                        { index: 'test1-1', title: '三级菜单1-1' },
+                        { index: 'test1-2', title: '三级菜单1-2' },
+                        { index: 'test1-3', title: '三级菜单1-3' }
                       ]
          },
         {
