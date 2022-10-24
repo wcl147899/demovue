@@ -1,18 +1,15 @@
 import axios from 'axios'
-
 const request = axios.create({
-    baseURL: 'http://localhost:8181/user',
+    baseURL:'http://127.0.0.1:4523/m1/1805444-0-default',
     timeout: 5000
 })
 
 request.interceptors.request.use(config => {
-    console.log(config);
     config.headers['Content-Type'] = 'application/json;charset=utf-8';
     return config
 }, error => {
     return Promise.reject(error)
 });
-
 request.interceptors.response.use(
     response => {
         let res = response.data;
@@ -32,4 +29,3 @@ request.interceptors.response.use(
     }
 )
 export default request
-
