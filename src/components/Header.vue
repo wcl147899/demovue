@@ -38,7 +38,7 @@ data() {
     return {
      itemList: [ // 水平一级菜单栏的菜单
         { path: '/Home', title: '首页' },
-        { path: '/test1', title: '一级菜单1'},
+        { path: '/dataManagement', title: '数据管理'},
       ],
     }
 },

@@ -16,25 +16,45 @@ export default new Router({
           meta: { title: '首页' }
         },
         {
-          path: '/test1',
-          component: () => import('@/page/test1/index.vue'),
-          meta: { title: '二级菜单1' },
-          redirect: '/test1/test1-1',  // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
+          path: '/dataManagement',
+          component: () => import('@/page/dataManagement/index.vue'),
+          meta: { title: '医院' },
+          redirect: '/dataManagement/hospital',  // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
           children:[
             {
-              path: 'test1-1',
-              component: () => import('@/page/test1/test1-1.vue'),
-              meta: { title: '二级菜单1-1' },
+              path: 'hospital',
+              component: () => import('@/page/dataManagement/hospital.vue'),
+              meta: { title: '医院' },
             },
             {
-              path: 'test1-2',
-              component: () => import('@/page/test1/test1-2.vue'),
-              meta: { title: '二级菜单1-2' },
+              path: 'campus',
+              component: () => import('@/page/dataManagement/campus.vue'),
+              meta: { title: '院区' },
             },
             {
-              path: 'test1-3',
-              component: () => import('@/page/test1/test1-3.vue'),
-              meta: { title: '二级菜单1-3' },
+              path: 'department',
+              component: () => import('@/page/dataManagement/department.vue'),
+              meta: { title: '科室' },
+            },
+            {
+              path: 'users',
+              component: () => import('@/page/dataManagement/users.vue'),
+              meta: { title: '用户' },
+            },
+            {
+              path: 'type',
+              component: () => import('@/page/dataManagement/type.vue'),
+              meta: { title: '类型' },
+            },
+           {
+              path: 'location',
+              component: () => import('@/page/dataManagement/location.vue'),
+              meta: { title: '位置' },
+            },
+           {
+              path: 'device',
+              component: () => import('@/page/dataManagement/device.vue'),
+              meta: { title: '类型' },
             },
           ]
         },

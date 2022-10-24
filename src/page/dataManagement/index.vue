@@ -26,17 +26,20 @@ export default {
         // { path: 'test1-2', title: '二级菜单1-2' },
         // { path: 'test1-3', title: '二级菜单1-3' },
          {
-            title: '菜单管理',
+            title: '组织架构',
             children: [
-                        { index: 'test1-1', title: '三级菜单1-1' },
-                        { index: 'test1-2', title: '三级菜单1-2' },
-                        { index: 'test1-3', title: '三级菜单1-3' }
+                        { index: 'hospital', title: '医院' },
+                        { index: 'campus', title: '院区' },
+                        { index: 'department', title: '科室' },
+                        { index: 'users', title: '用户'}
                       ]
          },
         {
-            title: '系统管理',
+            title: '设备管理',
             children: [
-                        {index: 'systemManage',title: '系统设置'}
+                        {index: 'type',title: '类型'},
+                        {index: 'location',title: '位置'},
+                        {index: 'device',title: '设备'}
                       ]
         }
       ]
