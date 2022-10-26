@@ -58,10 +58,13 @@ export default new Router({
             },
           ]
         },
-       
-        
       ]
     },
+    {
+      path: '/login',
+      component: () => import('@/login/login.vue'),
+      meta: {title:'登录'}
+    }
     
   ]
 })
